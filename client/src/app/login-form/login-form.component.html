@@ -1,6 +1,6 @@
 <form class="formGroup" [formGroup]="loginForm">
-  Enter User Name: <input class="formControl" formControlName="userName" type="text"><br>
+  Enter User Name: <input class="formControl" formControlName="email" type="text"><br>
   Enter passWord: <input class="formControl" formControlName= "passWord" type="text"><br>
   <button (click)="login()">Login</button>&nbsp;
-  <u><a [routerLink]="['/register']" routerLinkActive="router-link-active">Signup</a></u>
+  <u><a (click)="onSignUpClick()">Signup</a></u>
 </form>
