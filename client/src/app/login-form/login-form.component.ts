@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-form',
@@ -13,19 +14,20 @@ export class LoginFormComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private http: HttpClient
+    private http: HttpClient,
+    private router: Router
   ) { }
 
   ngOnInit() {
     this.loginForm = this.fb.group({
-      userName: ['', Validators.required],
+      email: ['', Validators.required],
       passWord: ['', Validators.required]
     });
   }
 
   login() {
     const data = {
-      userName: this.loginForm.get('userName').value,
+      email: this.loginForm.get('email').value,
       passWord: this.loginForm.get('passWord').value
     };
 
@@ -40,6 +42,10 @@ export class LoginFormComponent implements OnInit {
       alert('Login Failed');
 
     });
+  }
+
+  onSignUpClick() {
+    this.router.navigate(['/register']);
   }
 
 }
