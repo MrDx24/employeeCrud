@@ -26,12 +26,12 @@ export class LoginFormComponent implements OnInit {
   }
 
   login() {
-    const data = {
-      email: this.loginForm.get('email').value,
-      passWord: this.loginForm.get('passWord').value
-    };
+    // const data = {
+    //   email: this.loginForm.get('email').value,
+    //   passWord: this.loginForm.get('passWord').value
+    // };
 
-    this.http.post('http://localhost:3000/user/login', data).subscribe((response: any) => {
+    this.http.post('http://localhost:3000/user/login', this.loginForm.value).subscribe((response: any) => {
 
       console.log(response);
       alert('Login Successful');
@@ -47,5 +47,18 @@ export class LoginFormComponent implements OnInit {
   onSignUpClick() {
     this.router.navigate(['/register']);
   }
+
+  onfgPsswd() {
+    this.router.navigate(['/fgpsswd']);
+  }
+
+  get email() {
+    return this.loginForm.get('email');
+  }
+
+  get passWord() {
+    return this.loginForm.get('passWord');
+  }
+
 
 }
