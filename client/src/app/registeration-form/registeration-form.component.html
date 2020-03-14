@@ -1,12 +1,24 @@
-<h1>Registration Form</h1>
-<div class="col-md-4 col-offset-md-4">
-<form [formGroup]="registerationForm">
-  Enter User Name: <input class="formControl" formControlName="userNameReg"  type="text"><br>
-  Enter passWord: <input class="formControl" formControlName="passWordReg" type="text"><br>
-  Enter Confirm passWord: <input class="formControl" formControlName="confirmPsswdReg" type="text"><br>
-  Enter email: <input class="formControl" formControlName="emailReg" type="text"><br>
-  Enter mobile: <input class="formControl" formControlName="mobileReg" type="text"><br>
+<!-- <h1>Registration Form</h1> -->
 
-  <button [disabled]="registerationForm.invalid" (click)="register()" class="btn btn-primary" type="button">Register</button>
-</form>
+<div class="container" >
+  <div class="row">
+    <div class="col-xs-4 col-xs-offset-6" style="margin-left: 400px; margin-top: 40px; margin-bottom: 100px;">
+      <div class="panel panel-default" >
+          <div class="panel-heading" style=" padding: 10px; text-align: center; font-size: 25px;">Login</div>
+          <div class="panel-body" style=" padding: 10px; width: 320px;">
+            <!-- <div class="col-md-4 col-offset-md-4"> -->
+              <form class='formGroup' [formGroup]="registerationForm">
+                Enter User Name: <input mdbInput class="form-control" formControlName="userNameReg"  type="text"><br>
+                Enter passWord: <input mdbInput class="form-control" formControlName="passWordReg" type="text"><br>
+                Enter Confirm passWord: <input  mdbinput class="form-control" formControlName="confirmPsswdReg" type="text"><br>
+                Enter email: <input mdbInput class="form-control" formControlName="emailReg" type="email"><br>
+                Enter mobile: <input mdbInput class="form-control" formControlName="mobileReg" type="text"><br>
+
+                <button class="form-control" [disabled]="registerationForm.invalid" (click)="register()" class="btn btn-primary" type="button">Register</button>
+              </form>
+              <!-- </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
 </div>
