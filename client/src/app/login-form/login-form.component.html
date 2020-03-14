@@ -1,6 +1,31 @@
-<form class="formGroup" [formGroup]="loginForm">
-  Enter User Name: <input class="formControl" formControlName="email" type="text"><br>
-  Enter passWord: <input class="formControl" formControlName= "passWord" type="text"><br>
-  <button (click)="login()">Login</button>&nbsp;
-  <u><a (click)="onSignUpClick()">Signup</a></u>
-</form>
+
+  <div class="container" >
+    <div class="row">
+      <div class="col-xs-4 col-xs-offset-6" style="margin-left: 400px; margin-top: 100px; margin-bottom: 100px;">
+        <div class="panel panel-default" >
+          <div class="panel-heading" style=" padding: 10px; text-align: center; font-size: 25px;">Login</div>
+          <div class="panel-body" style=" padding: 10px; width: 320px;">
+            <form class="formGroup" [formGroup]="loginForm">
+              <input mdbInput class="form-control btn-block"  placeholder="Enter email" formControlName="email" type="text" style="border-radius: 10px ; padding-left: 10px;">
+              <div class="text-danger" *ngIf="email.invalid && (email.dirty || email.touched)" style="margin-left: 10px;">
+                Please enter email
+              </div>
+              <br>
+              <input mdbInput class="form-control btn-block" placeholder="Enter password" formControlName= "passWord" type="password" style="border-radius: 10px ;padding-left: 10px;">
+              <div class="text-danger" *ngIf="passWord.invalid && (passWord.dirty || passWord.touched)" style="margin-left: 10px;">
+                Please enter password
+              </div>
+              <br>
+              <button [disabled]="loginForm.invalid"class="btn btn-primary btn-block" (click)="login()" >Login</button>&nbsp;
+              <br>
+              <u><a (click)="onSignUpClick()">New user? Signup</a></u>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+              <u><a (click)="onfgPsswd()">Forgot password</a></u>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
