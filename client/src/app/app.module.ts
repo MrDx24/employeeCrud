@@ -10,12 +10,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { RegisterationFormComponent } from './registeration-form/registeration-form.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginFormComponent,
     RegisterationFormComponent,
     ForgotPasswordComponent,
+
   ],
   imports: [
     BrowserModule,

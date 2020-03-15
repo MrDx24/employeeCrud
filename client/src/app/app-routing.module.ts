@@ -5,11 +5,13 @@ import { RegisterationFormComponent } from './registeration-form/registeration-f
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 
+
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginFormComponent},
   { path: 'register', component: RegisterationFormComponent},
-  { path: 'fgpsswd', component: ForgotPasswordComponent}
+  { path: 'fgpsswd', component: ForgotPasswordComponent},
+ 
 ];
 
 @NgModule({

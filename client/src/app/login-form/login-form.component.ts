@@ -35,6 +35,8 @@ export class LoginFormComponent implements OnInit {
 
       console.log(response);
       alert('Login Successful');
+      //this.onCreateUpdate();
+
 
     }, (error) => {
 
@@ -50,6 +52,10 @@ export class LoginFormComponent implements OnInit {
 
   onfgPsswd() {
     this.router.navigate(['/fgpsswd']);
+  }
+
+  onCreateUpdate() {
+    this.router.navigate(['/createUpdate']);
   }
 
   get email() {
